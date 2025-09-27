@@ -21,7 +21,7 @@ class OptolinkBinarySensor : public DatapointComponent, public esphome::binary_s
   void update() override { datapoint_read_request_(); }
 
   const StringRef &get_component_name() override { return get_name(); }
-  void datapoint_value_changed(uint8_t value) override { publish_state(value); };
+  void datapoint_value_changed(uint8_t value) override; //{ publish_state(value); };
 };
 }  // namespace optolink
 }  // namespace esphome
