@@ -34,8 +34,7 @@ namespace esphome
         }
         else
         {
-          ESP_LOGW(TAG, "ignoring value %s for binary sensor 1",
-                   value);
+          ESP_LOGI(TAG, "ignoring value %u (0x%02X) for binary sensor", value, value);
         }
       }
       else
@@ -46,8 +45,7 @@ namespace esphome
         }
         else
         {
-          ESP_LOGW(TAG, "ignoring value %s for binary sensor 2",
-                   value);
+          ESP_LOGI(TAG, "ignoring value %u (0x%02X) for binary sensor", value, value);
         }
       }
     };

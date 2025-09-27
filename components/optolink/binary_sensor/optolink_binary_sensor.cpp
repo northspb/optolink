@@ -13,12 +13,13 @@ namespace esphome
     {
       if (value != 5)
       {
+        lastvalue_ = (int8_t)value;
         publish_state((int8_t)value);
       }
       else
       {
-        ESP_LOGW(TAG, "ignoring value %s for binary sensor",
-                 value);
+        ESP_LOGI(TAG, "ignoring value %u (0x%02X) for binary sensor", value, value);
+        publish_state(lastvalue_);
       }
     };
   } // namespace optolink

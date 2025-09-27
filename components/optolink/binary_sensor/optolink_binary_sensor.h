@@ -16,6 +16,9 @@ class OptolinkBinarySensor : public DatapointComponent, public esphome::binary_s
     set_div_ratio(1);
   }
 
+  private:
+  uint8_t lastvalue_ = 0;
+
  protected:
   void setup() override { setup_datapoint_(); }
   void update() override { datapoint_read_request_(); }
