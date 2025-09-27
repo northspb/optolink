@@ -18,7 +18,7 @@ namespace esphome
       else
       {
         ESP_LOGD(TAG, "ignoring value %s for binary sensor",
-                 value().c_str());
+                 value.c_str());
       }
     };
   } // namespace optolink
