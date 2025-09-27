@@ -13,6 +13,9 @@ class OptolinkNumber : public DatapointComponent, public esphome::number::Number
  public:
   OptolinkNumber(Optolink *optolink) : DatapointComponent(optolink, true) {}
 
+ private:
+  uint8_t lastvalue_ = 0;
+  
  protected:
   void setup() override { setup_datapoint_(); }
   void update() override { datapoint_read_request_(); }

@@ -18,7 +18,7 @@ namespace esphome
       }
       else
       {
-        ESP_LOGI(TAG, "ignoring value %u (0x%02X) for binary sensor", value, value);
+        ESP_LOGW(TAG, "ignoring value %u (0x%02X) for binary sensor, last value %u", value, value, lastvalue_);
         publish_state(lastvalue_);
       }
     };

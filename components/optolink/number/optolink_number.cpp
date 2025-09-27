@@ -30,22 +30,26 @@ namespace esphome
       {
         if (value != 5)
         {
+          lastvalue_ = value;
           publish_state(value);
         }
         else
         {
-          ESP_LOGI(TAG, "ignoring value %u (0x%02X) for binary sensor", value, value);
+          ESP_LOGW(TAG, "ignoring value %u (0x%02X) for binary sensor, last value %u", value, value, lastvalue_);
+          publish_state(lastvalue_);
         }
       }
       else
       {
         if (value != 5)
         {
+          lastvalue_ = value;
           publish_state((int8_t)value);
         }
         else
         {
-          ESP_LOGI(TAG, "ignoring value %u (0x%02X) for binary sensor", value, value);
+          ESP_LOGW(TAG, "ignoring value %u (0x%02X) for binary sensor, last value %u", value, value, lastvalue_);
+          publish_state((int8_t)lastvalue_);
         }
       }
     };
